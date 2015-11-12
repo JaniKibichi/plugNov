@@ -1,0 +1,116 @@
+
+- if user_signed_in?
+        %p#intro
+                Hello
+                = current_user.name
+                | Last signed in
+                = time_ago_in_words(current_user.last_sign_in_at)
+                | At
+                = current_user.last_sign_in_ip
+                %br/
+                %span
+                        Data From The Plugin Pulse installed at
+                        = current_user.city
+                        City |
+                        = current_user.estate
+                        Estate
+                        %br/
+                        %span
+
+        Usage since 6 Months Ago.
+        = high_chart("day", @chart)
+
+
+- else
+        %p
+        %h1.title PlugIn Energy | How are you are using Electricity?
+        %p        
+        Usage since 6 Months Ago.
+        = high_chart("day", @chart)
+        %br/
+        %hr/
+        %br/
+        %h2.title PlugIn Energy 
+        %h5.date Energy Monitoring, Data Collection & Analytics, Clean Energy Adoption Facilitation
+        %hr/
+        = image_tag "seven1.png"
+        %hr/
+       
+       
+#part
+        %h3.title The landscape
+        %p 
+        According to Bloomberg, it is projected that by 2026, utility-scale solar will be competitive in 
+        many parts around the world. Between now and 2040, $3.7 trillion will be channelled to solar 
+        investments globally. 
+        %p 
+        Despite the cost of solar installations dropping by 80% in the last five years, the uptake of the 
+        technology in East Africa, Kenya in particular is low. Businesses and entities that rely on 
+        electric energy for operations cite lack of stable reliable electricity as a hindrance to 
+        competiveness. 
+        %p 
+        Undoubtedly, there is a need to improve energy security and infrastructure in order to boost 
+        economic productivity. 
+        %hr/
+      
+
+        %h3.title The problem
+        %p 
+        Reliable energy consumption data in form of profiles and footprint is not available to 
+        decision makers in a format they can use to make investment decisions.
+        %br/
+        %p
+        PlugIn energy monitors, measures and provides data to decision makers in a format 
+        they can use so they can make the decisions on adoption of renewable energy or 
+        understand their energy needs better.
+        %br/
+        %P 
+        By creating such profiles, energy infrastructure providers can also create better 
+        business products and services that are tailor made, allowing more energy consumers 
+        to adopt clean energy technologies.
+        %hr/
+      
+
+        %h3.title Solution: Energy Data
+        %p
+        We provide data that is useful for decision makers in terms of understanding:
+        %br/
+        1. The peak demand hours for consumers.
+        %br/
+        2. Opportunities for solar and wind technology adoption.
+        %br/
+        3. How to access to stable and reliable power sources. 
+        %br/
+        4. Compliance in energy pricing.
+        %br/
+        5. Households to participate in energy efficiency and demand response.
+        %br/
+        6. Consumption analytics.
+        %hr/
+           
+        %h4.title BENEFITS OF ENERGY DATA
+        %p
+        Different clients need data for various needs. We aim to provide valuable data across:
+        %br/
+        Households - Lower household energy consumption through visibility of energy usage. 
+        %br/
+        Business - Increased competitiveness with 99% uptime, better strategic planning. 
+        %br/
+        Utility - Ensure stability of the grid and identify opportunities for independent power producers.
+        %hr/
+       
+        %h4.title PLUGIN ENERGY IS LOOKING TO WORK WITH: 
+        %p
+        PlugIn Energy is looking to form partnerships to achieve energy security with various energy stakeholders including:
+        %br/
+        a. Providers of energy star-certified products. 
+        %br/
+        b. Service providers (Carbon Trust) to support businesses realise energy saving opportunities.
+        %br/
+        c. Renewable providers to provide back-up generation thereby reducing demand on the grid.
+        %br/
+        d. Government and particular sector players to meet energy efficiency targets.
+        %hr/
+        %br/
+        %p
+        %h6.date DATA COLLECTED BY PLUGIN ENERGY USING THE PULSE DEVICE - Nairobi, Kenya | email: info@pluginenergy.net | Copyright - 2015.

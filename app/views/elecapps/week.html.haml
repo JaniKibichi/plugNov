@@ -1,0 +1,26 @@
+- if user_signed_in?
+        %p#intro
+                Hello
+                = current_user.name
+                | Last signed in
+                = time_ago_in_words(current_user.last_sign_in_at)
+                | At
+                = current_user.last_sign_in_ip
+                %br/
+                %span
+                        Data From The Plugin Pulse installed at 
+                        = current_user.city
+                        City |
+                        = current_user.estate
+                        Estate
+                        %br/
+                        %span
+
+        Daily use since 7days Ago.
+        = high_chart "Week", @chart
+
+
+- else
+        %p#intro
+                How are you are using Electricity?
+

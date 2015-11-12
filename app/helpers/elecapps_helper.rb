@@ -1,0 +1,2 @@
+module ElecappsHelper
+end

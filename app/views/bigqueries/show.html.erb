@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @bigquery.text %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @bigquery.number %>
+</p>
+
+<%= link_to 'Edit', edit_bigquery_path(@bigquery) %> |
+<%= link_to 'Back', bigqueries_path %>

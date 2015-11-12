@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+  <meta charset="utf-8" />
+  <title>PlugIn</title>
+  <style>
+ 	body{
+   margin-top: 30px;
+   margin-left:40px;
+	}
+  </style>
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>		
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script type="text/javascript">
+	
+		function uodate()
+		{
+		var values = [];
+                var xdata = []
+                var yes = '';
+                $.getJSON('http://5.175.145.182/elecapps.json', function(data) {
+                    // Populate series
+                   // for (i = 0; i < data.length; i++){
+                     //   processed_json.push([data.date[i].key, data.text[i].value]);
+                   // }
+                   for(i in data){
+                   values.push(data[i].text);
+                   xdata.push(data[i].date);
+                   }
+                   //console.log(yes);
+                   console.log(values);
+                   // draw chart
+                    $('#container').highcharts({
+                    chart: {
+                        type: "column"
+                    },
+			plotOptions:{
+				series:{
+					animation:false
+					}
+				},
+                    title: {
+                        text: "The Plugin Team"
+                    },
+                    subtitle: {
+                        text: 'Household Electricity Consumption'
+                    },xAxis: {
+                        categories:xdata,
+                        allowDecimals: false,
+                        title: {
+                            text: ""
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Usage in Watts"
+                        }
+                    },
+                    series: [{
+                            name: 'Consumption',
+                        data: values
+                    }]
+                });
+            });
+
+
+	}
+
+	function done()
+	{
+	setTimeout(function(){
+	uodate();
+	done();
+		},300);
+	}
+
+
+
+        $(function () {
+done();
+
+/*
+                var values = [];
+		var xdata = []
+                var yes = '';   
+                $.getJSON('http://5.175.145.182/elecapps.json', function(data) {
+                    // Populate series
+                   // for (i = 0; i < data.length; i++){
+                     //   processed_json.push([data.date[i].key, data.text[i].value]);
+                   // }		      
+                   for(i in data){
+		   values.push(data[i].text);
+		   xdata.push(data[i].date);
+  		   }
+                   //console.log(yes);
+                   console.log(values); 
+		   // draw chart
+                    $('#container').highcharts({
+                    chart: {
+                        type: "column"
+                    },
+                    title: {
+                        text: "The Plugin Team"
+                    },
+                    subtitle: {
+			text: 'Household Electricity Consumption'
+		    },
+                    xAxis: {
+                        categories:xdata,
+                        allowDecimals: false,
+                        title: {
+                            text: ""
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Usage in KWH"
+                        }
+                    },
+                    series: [{
+	                    name: 'Consumption',
+                        data: values
+                    }]
+                }); 
+            });
+  */
+      });
+    </script>
+ </head>
+<body>
+<div id="container"></div>
+</body>
+</html>
